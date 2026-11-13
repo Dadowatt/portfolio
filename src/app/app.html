@@ -1,0 +1,225 @@
+<div class="site-shell" id="home">
+  <header class="topbar" aria-label="Navigation principale">
+    <a class="brand" href="#home" (click)="closeMenu()" aria-label="Retour à l'accueil">
+      <span class="brand-mark" aria-hidden="true">DW</span>
+      <span>DADO<span class="brand-dot">.</span>WATT</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Sections du portfolio">
+      <a class="nav-link active" href="#home">Accueil</a>
+      <a class="nav-link" href="#about">À propos</a>
+      <a class="nav-link" href="#skills">Compétences</a>
+      <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#projects">Projets</a>
+      <a class="nav-link" href="#experience">Parcours</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+
+    <a class="top-contact" href="#contact">Parlons projet <span aria-hidden="true">↗</span></a>
+    <button class="menu-toggle" type="button" [attr.aria-expanded]="menuOpen" aria-controls="mobile-menu" aria-label="Ouvrir le menu" (click)="menuOpen = !menuOpen">
+      @if (menuOpen) { <span aria-hidden="true">✕</span> } @else { <span aria-hidden="true">☰</span> }
+    </button>
+  </header>
+
+  @if (menuOpen) {
+    <nav class="nav-mobile" id="mobile-menu" aria-label="Navigation mobile">
+      <a href="#home" (click)="closeMenu()">Accueil</a>
+      <a href="#about" (click)="closeMenu()">À propos</a>
+      <a href="#skills" (click)="closeMenu()">Compétences</a>
+      <a href="#services" (click)="closeMenu()">Services</a>
+      <a href="#projects" (click)="closeMenu()">Projets</a>
+      <a href="#experience" (click)="closeMenu()">Parcours</a>
+      <a href="#contact" (click)="closeMenu()">Contact</a>
+    </nav>
+  }
+
+  <main>
+    <!-- ACCUEIL : la photo du profil est définie dans portfolio-data.ts -->
+    <section class="hero panel" aria-labelledby="hero-title">
+      <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+      <div class="hero-text">
+        <div class="availability"><span class="status-dot"></span> Disponible pour de nouvelles opportunités</div>
+        <p class="eyebrow hello">BONJOUR, JE SUIS {{ profile.name.toUpperCase() }}</p>
+        <h1 id="hero-title">{{ profile.headlineLine1 }}<br><span>{{ profile.headlineLine2 }}</span><br>{{ profile.headlineLine3 }}</h1>
+        <p class="hero-desc">{{ profile.introduction }}</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#projects">Découvrir mes projets <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-outline" href="#contact">Me contacter <span aria-hidden="true">✉</span></a>
+        </div>
+        <div class="social-row">
+          <span>Retrouvez-moi sur</span>
+          <a [href]="profile.github" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Dado Watt" title="GitHub">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.12c-3.09.67-3.74-1.31-3.74-1.31-.5-1.29-1.23-1.63-1.23-1.63-1.01-.68.08-.66.08-.66 1.11.08 1.7 1.14 1.7 1.14.98 1.69 2.57 1.2 3.2.92.1-.71.39-1.2.7-1.48-2.47-.28-5.06-1.23-5.06-5.49 0-1.21.43-2.2 1.14-2.97-.11-.28-.5-1.41.11-2.93 0 0 .93-.3 3.05 1.13a10.5 10.5 0 0 1 5.55 0c2.11-1.43 3.04-1.13 3.04-1.13.61 1.52.23 2.65.11 2.93.71.77 1.13 1.76 1.13 2.97 0 4.27-2.59 5.21-5.07 5.49.4.34.75 1.01.75 2.04v3.03c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>
+          </a>
+          @if (profile.linkedin) {
+            <a [href]="profile.linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Dado Watt" title="LinkedIn">in</a>
+          }
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="orbit orbit-three"></div>
+        <div class="orbit-dot orbit-dot-one"></div>
+        <div class="orbit-dot orbit-dot-two"></div>
+        <div class="orbit-dot orbit-dot-three"></div>
+        <div class="portrait-halo"></div>
+        <img class="hero-portrait" [src]="profile.portraitAccueil" [alt]="'Portrait de ' + profile.name" loading="eager">
+        <div class="hero-stat-bar" aria-label="Mes domaines de compétences">
+          <div class="stat"><strong>Angular</strong><span>Frontend</span></div>
+          <div class="stat"><strong>Django</strong><span>Backend & API</span></div>
+          <div class="stat"><strong>IA & RAG</strong><span>Intelligence artificielle</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="two-column" id="about">
+      <section class="about panel" aria-labelledby="about-title">
+        <div class="about-portrait">
+          <img [src]="profile.portraitAbout" [alt]="'Photo de ' + profile.name" loading="lazy">
+          <span class="photo-signature">Dado.</span>
+        </div>
+        <div class="about-copy">
+          <p class="section-index"><span>01</span> À PROPOS DE MOI</p>
+          <h2 id="about-title">Des idées à des <em>solutions concrètes.</em></h2>
+          <p>{{ profile.about }}</p>
+          <ul class="highlights">
+            <li><span aria-hidden="true">✦</span> Développement de bout en bout</li>
+            <li><span aria-hidden="true">✦</span> Interfaces pensées pour l'utilisateur</li>
+            <li><span aria-hidden="true">✦</span> Curiosité pour les solutions IA</li>
+          </ul>
+          @if (profile.cv) {
+            <a class="btn btn-subtle" [href]="profile.cv" download>Télécharger mon CV <span aria-hidden="true">↓</span></a>
+          } @else {
+            <span class="pending-note">CV à ajouter prochainement</span>
+          }
+        </div>
+      </section>
+
+      <section class="skills panel" id="skills" aria-labelledby="skills-title">
+        <p class="section-index"><span>02</span> COMPÉTENCES & OUTILS</p>
+        <h2 class="visually-hidden" id="skills-title">Mes compétences techniques</h2>
+        <div class="skill-grid">
+          @for (skill of skills; track skill.name) {
+            <div class="skill-card" [class.skill-ai]="skill.type === 'ai'">
+              <span class="skill-symbol">{{ skill.short }}</span>
+              <span class="skill-name">{{ skill.name }}</span>
+            </div>
+          }
+        </div>
+        <div class="skills-footer">✧ Toujours curieuse d'apprendre et d'évoluer</div>
+      </section>
+    </div>
+
+    <section class="panel services" id="services" aria-labelledby="services-title">
+      <p class="section-index"><span>03</span> CE QUE JE PEUX RÉALISER</p>
+      <h2 class="visually-hidden" id="services-title">Services et domaines de compétence</h2>
+      <div class="services-grid">
+        @for (service of services; track service.title) {
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              @switch (service.icon) {
+                @case ('web') { <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 10 6 12l2 2M16 10l2 2-2 2m-3.5-5-1 4M3 9h18"/></svg> }
+                @case ('code') { <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="8.5" y="15" width="7" height="7" rx="1.5"/><path d="M6.5 10v4h5.5M17.5 10v4H12"/></svg> }
+                @case ('ai') { <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.2 2.2m8.4 8.4 2.2 2.2m0-12.8-2.2 2.2m-8.4 8.4-2.2 2.2"/><rect x="8" y="8" width="8" height="8" rx="2"/></svg> }
+                @default { <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m7 18 4-5 2 2 2-3 4 6"/></svg> }
+              }
+            </div>
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section class="panel projects" id="projects" aria-labelledby="projects-title">
+      <div class="section-header">
+        <div><p class="section-index"><span>04</span> PROJETS SÉLECTIONNÉS</p><h2 class="visually-hidden" id="projects-title">Mes réalisations</h2></div>
+        <a class="text-link" [href]="profile.github + '?tab=repositories'" target="_blank" rel="noopener noreferrer">Tous mes dépôts GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="projects-grid">
+        @for (project of projects; track project.slug) {
+          <article class="project-card">
+            <a class="project-main-link" [href]="project.github" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'Ouvrir le dépôt GitHub de ' + project.name">
+              <div class="project-preview" [class]="'project-preview preview-' + project.slug">
+                <div class="fake-browser"><span></span><span></span><span></span><i>portfolio / {{ project.slug }}</i></div>
+                <div class="preview-internal">
+                  <span class="preview-topline">PROJET • {{ project.previewCategory }}</span>
+                  <strong>{{ project.previewLabel }}</strong>
+                  <div class="preview-bars"><i></i><i></i><i></i></div>
+                  <div class="preview-tiles"><span></span><span></span><span></span></div>
+                </div>
+                <div class="preview-overlay"><span>Voir sur GitHub</span><span aria-hidden="true">↗</span></div>
+              </div>
+              <div class="project-body">
+                <span class="project-category">{{ project.category }}</span>
+                <div class="project-heading"><h3>{{ project.name }}</h3><span class="external-icon" aria-hidden="true">↗</span></div>
+                <p>{{ project.description }}</p>
+                <div class="tag-row">
+                  @for (tech of project.technologies; track tech) { <span>{{ tech }}</span> }
+                </div>
+              </div>
+            </a>
+            @if (project.extraGithub?.length) {
+              <div class="project-extra">
+                <span>Autres dépôts :</span>
+                @for (extra of project.extraGithub; track extra.url) {
+                  <a [href]="extra.url" target="_blank" rel="noopener noreferrer">{{ extra.label }} ↗</a>
+                }
+              </div>
+            }
+          </article>
+        }
+      </div>
+      <p class="preview-disclaimer">Les visuels des cartes sont provisoires : ils seront remplacés par de vraies captures d'écran des projets.</p>
+    </section>
+
+    <section class="panel experience" id="experience" aria-labelledby="experience-title">
+      <p class="section-index"><span>05</span> MON PARCOURS</p>
+      <h2 class="visually-hidden" id="experience-title">Formations et expériences d'apprentissage</h2>
+      <div class="timeline">
+        @for (item of timeline; track item.institution) {
+          <div class="timeline-step">
+            <div class="timeline-dot"></div>
+            <span class="timeline-year">{{ item.year }}</span>
+            <h3>{{ item.title }}</h3>
+            <strong>{{ item.institution }}</strong>
+            <p>{{ item.detail }}</p>
+          </div>
+        }
+      </div>
+    </section>
+
+    <section class="panel contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-intro">
+        <p class="section-index"><span>06</span> PRENONS CONTACT</p>
+        <h2 id="contact-title">Construisons quelque chose d'<em>utile ensemble.</em></h2>
+        <p>Une opportunité, un projet ou simplement une question ? Je serai ravie d'en discuter.</p>
+        <a [href]="profile.github" target="_blank" rel="noopener noreferrer" class="text-link contact-github">Retrouvez mes projets sur GitHub ↗</a>
+      </div>
+      <form class="contact-form" (ngSubmit)="sendMessage()">
+        <div class="form-two">
+          <label>Votre nom <input name="contactName" [(ngModel)]="contact.name" placeholder="Nom et prénom" required></label>
+          <label>Votre e-mail <input name="contactEmail" [(ngModel)]="contact.email" type="email" placeholder="vous@exemple.com" required></label>
+        </div>
+        <label>Sujet <input name="subject" [(ngModel)]="contact.subject" placeholder="Objet de votre message" required></label>
+        <label>Votre message <textarea name="message" [(ngModel)]="contact.message" placeholder="Parlez-moi de votre projet..." rows="5" required></textarea></label>
+        <button type="submit" class="btn btn-gold">Préparer le message <span aria-hidden="true">↗</span></button>
+        <p class="form-footnote">Le formulaire ouvre votre application de messagerie. Aucun message n'est transmis par le site.</p>
+        @if (contactNotice) { <p class="form-notice" role="status">{{ contactNotice }}</p> }
+      </form>
+      <aside class="contact-details">
+        <div class="contact-item"><span class="contact-item-icon">⌁</span><div><b>Localisation</b><span>{{ profile.location }}</span></div></div>
+        <div class="contact-item"><span class="contact-item-icon">✉</span><div><b>E-mail</b><span>{{ profile.email || 'Adresse à renseigner' }}</span></div></div>
+        <div class="contact-item"><span class="contact-item-icon">⌘</span><div><b>GitHub</b><a [href]="profile.github" target="_blank" rel="noopener noreferrer">github.com/Dadowatt ↗</a></div></div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">DW</span><span>DADO<span class="brand-dot">.</span>WATT</span></a>
+    <span>© {{ year }} {{ profile.name }}. Tous droits réservés.</span>
+    <a class="back-top" href="#home" aria-label="Retour en haut">↑</a>
+  </footer>
+</div>
