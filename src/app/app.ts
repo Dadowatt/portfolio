@@ -1,11 +1,25 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
+import {
+  LucideCode2,
+  LucidePanelsTopLeft,
+  LucideBrainCircuit,
+  LucideDownload
+} from '@lucide/angular';
+
 import { profile, projects, services, skills, timeline } from './portfolio-data';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule],
+  imports: [
+  FormsModule,
+  LucideCode2,
+  LucidePanelsTopLeft,
+  LucideBrainCircuit,
+  LucideDownload
+],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -34,6 +48,6 @@ export class App {
     const body = encodeURIComponent(`Nom : ${this.contact.name}\nEmail : ${this.contact.email}\n\n${this.contact.message}`);
     // Pas de backend : ouvre le logiciel de messagerie de la personne.
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-    this.contactNotice = 'Ton application de messagerie doit s’ouvrir pour envoyer le message.';
+    this.contactNotice = "Ton application de messagerie doit s'ouvrir pour envoyer le message.";
   }
 }

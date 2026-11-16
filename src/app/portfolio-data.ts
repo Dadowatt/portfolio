@@ -1,21 +1,18 @@
-// Fichier principal pour personnaliser ton portfolio.
-// Remplace portrait-placeholder.svg par ta photo dans public/images/.
 export const profile = {
   name: 'Dado Watt',
   firstName: 'Dado',
   role: 'Développeuse web, web mobile & IA',
   headlineLine1: 'Je conçois des',
-  headlineLine2: 'expériences web',
+  headlineLine2: 'applications web',
   headlineLine3: 'intelligentes.',
   introduction: 'Je développe des solutions web utiles, de l\'analyse des besoins à la réalisation, en associant développement et intelligence artificielle.',
   about: 'Développeuse web, web mobile et IA, formée à Simplon Sénégal, je conçois des applications qui répondent à des besoins concrets. J\'accorde de l\'importance à la qualité du code, à l\'expérience utilisateur et à la pertinence des fonctionnalités.',
   portraitAccueil: '/images/profil.png',
   portraitAbout: '/images/Dado_Watt.png',
-  // Une fois la photo ajoutée dans public/images, indique : '/images/portrait.jpg'
-  email: '', // À compléter pour activer le formulaire de contact.
+  email: 'dadowatt92@gmail.com', // À compléter pour activer le formulaire de contact.
   github: 'https://github.com/Dadowatt',
-  linkedin: '', // Optionnel : renseigner ton profil LinkedIn si tu en as un.
-  cv: '', // Exemple : '/cv-dado-watt.pdf' après ajout dans public/.
+  linkedin: 'https://www.linkedin.com/in/dado-watt-417971152/',
+  cv: '/documents/CV-Dado-Watt.pdf',
   location: 'Dakar, Sénégal'
 };
 
@@ -97,7 +94,7 @@ export const services = [
 
 export const timeline = [
   { year: '2026', title: 'Développement web, web mobile & IA', institution: 'Simplon Sénégal', detail: 'Formation certifiante et réalisation d’AdmiGuide.' },
-  { year: '2024', title: 'Formation en développement web', institution: '10H TECH', detail: 'Renforcement des compétences en développement.' },
-  { year: '2023', title: 'Formation en développement web', institution: 'XARALA', detail: 'Pratique du développement et projets.' },
+  { year: '2024', title: 'Formation en dev web Full-Stack', institution: '10H TECH', detail: 'Renforcement des compétences en développement.' },
+  { year: '2023', title: 'Formation en Full-Stack Javascript', institution: 'XARALA', detail: 'Pratique du développement et projets.' },
   { year: '2021', title: 'Formation en développement web', institution: 'HEPO', detail: 'Premières réalisations et apprentissage du développement.' }
 ];
