@@ -398,10 +398,10 @@ h2 em {
   z-index: 2;
   display: block;
   bottom: 50px;
-  left: 50%;
+  left: 45%;
   transform: translateX(-50%);
-  width: min(100%, 565px);
-  height: calc(100% - 55px);
+  width: min(100%, 650px);
+  height: calc(100% - 35px);
   object-fit: contain;
   object-position: center bottom;
   border-radius: 0;
@@ -1408,4 +1408,144 @@ h2 em {
 
 .cv-download:hover .cv-download-icon {
   transform: translateY(2px);
+}
+
+
+/* =========================================
+   HERO STATS — DARK GOLD GLASSMORPHISM
+========================================= */
+
+.hero-stat-bar {
+  position: absolute;
+  z-index: 4;
+
+  /* Positionnement */
+  bottom: 48px;
+  left: 5%;
+  right: 5%;
+
+  /* Dimensions initiales conservées */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  /* Fond sombre olive / doré */
+  background: rgba(31, 31, 24, 0.88);
+
+  /* Aucun effet de flou */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  /* Bordure et profondeur */
+  border: 1px solid rgba(210, 176, 103, 0.24);
+  border-radius: 13px;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  padding: 20px 8px;
+
+  transition: border-color 0.3s ease;
+}
+
+.hero-stat-bar:hover {
+  border-color: rgba(237, 187, 94, 0.4);
+}
+
+/* Statistiques individuelles */
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 7px;
+  padding: 0 5px;
+}
+
+/* Séparation des statistiques */
+.stat + .stat {
+  border-left: 1px solid rgba(210, 176, 103, 0.16);
+}
+
+/* Valeurs */
+.stat strong {
+  font-size: 19px;
+  color: #f0c46c;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Libellés */
+.stat span {
+  color: #c5c0b5;
+  font-size: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-stat-bar {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    width: 90%;
+    margin: 20px auto 0;
+  }
+}
+
+
+
+
+/* =========================================
+   HERO STATS — DOMAINES DE COMPETENCES
+========================================= */
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 8px;
+  text-align: center;
+}
+
+.stat strong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  font-size: 13px;
+  color: #f0c46c;
+  font-weight: 700;
+}
+
+.stat strong svg {
+  width: 19px;
+  height: 19px;
+  color: #d6b66e;
+  stroke-width: 1.8;
+  flex-shrink: 0;
+}
+
+.stat span {
+  color: #c5c0b5;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.hero-actions .btn svg {
+  width: 17px;
+  height: 17px;
+  stroke-width: 1.8;
+  flex-shrink: 0;
+}
+.hero-actions .btn-outline svg {
+  color: #f0c46c;
+  stroke: #f0c46c;
+  width: 17px;
+  height: 17px;
+  stroke-width: 1.8;
 }

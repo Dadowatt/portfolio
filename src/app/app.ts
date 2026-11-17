@@ -5,7 +5,12 @@ import {
   LucideCode2,
   LucidePanelsTopLeft,
   LucideBrainCircuit,
-  LucideDownload
+  LucideDownload,
+  LucideMonitor,
+  LucideServer,
+  LucideWorkflow,
+  LucideMail,
+  LucideArrowUpRight
 } from '@lucide/angular';
 
 import { profile, projects, services, skills, timeline } from './portfolio-data';
@@ -18,7 +23,12 @@ import { profile, projects, services, skills, timeline } from './portfolio-data'
   LucideCode2,
   LucidePanelsTopLeft,
   LucideBrainCircuit,
-  LucideDownload
+  LucideDownload,
+  LucideMonitor,
+  LucideServer,
+  LucideWorkflow,
+  LucideMail,
+  LucideArrowUpRight
 ],
   templateUrl: './app.html',
   styleUrl: './app.css'

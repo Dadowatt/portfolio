@@ -70,9 +70,10 @@
           <a class="btn btn-gold" href="#projects"
             >Découvrir mes projets <span aria-hidden="true">↗</span></a
           >
-          <a class="btn btn-outline" href="#contact"
-            >Me contacter <span aria-hidden="true">✉</span></a
-          >
+          <a class="btn btn-outline" href="#contact">
+            Me contacter
+            <svg lucideMail aria-hidden="true"></svg>
+          </a>
         </div>
         <div class="social-row">
           <span>Retrouvez-moi sur</span>
@@ -115,15 +116,40 @@
           [alt]="'Portrait de ' + profile.name"
           loading="eager"
         />
-        <div class="hero-stat-bar" aria-label="Mes domaines de compétences">
-          <div class="stat"><strong>Angular</strong><span>Frontend</span></div>
-          <div class="stat">
-            <strong>Django</strong><span>Backend & API</span>
-          </div>
-          <div class="stat">
-            <strong>IA & RAG</strong><span>Intelligence artificielle</span>
-          </div>
-        </div>
+
+
+<div class="hero-stat-bar" aria-label="Mes domaines de compétences">
+
+  <!-- FRONTEND -->
+  <div class="stat">
+    <strong>
+      <svg lucidePanelsTopLeft aria-hidden="true"></svg>
+      Frontend
+    </strong>
+    <span>Angular · Tailwind · HTML/CSS</span>
+  </div>
+
+  <!-- BACKEND -->
+  <div class="stat">
+    <strong>
+      <svg lucideServer aria-hidden="true"></svg>
+      Backend
+    </strong>
+    <span>Django · Laravel · API</span>
+  </div>
+
+  <!-- INTELLIGENCE ARTIFICIELLE -->
+  <div class="stat">
+    <strong>
+      <svg lucideBrainCircuit aria-hidden="true"></svg>
+      Intelligence Artificielle
+    </strong>
+    <span>IA · RAG · LLM</span>
+  </div>
+
+</div>
+
+
       </div>
     </section>
 
