@@ -217,14 +217,21 @@
         <div class="skill-grid">
           @for (skill of skills; track skill.name) {
           <div class="skill-card" [class.skill-ai]="skill.type === 'ai'">
-            <span class="skill-symbol">{{ skill.short }}</span>
+            <div class="skill-symbol">
+            <img
+              [src]="skill.image"
+              [alt]="skill.name"
+              loading="lazy"
+            />
+          </div>
             <span class="skill-name">{{ skill.name }}</span>
           </div>
           }
         </div>
         <div class="skills-footer">
-          ✧ Toujours curieuse d'apprendre et d'évoluer
-        </div>
+        <svg lucideHeart aria-hidden="true"></svg>
+        <span>Toujours curieuse d'apprendre et d'évoluer</span>
+      </div>
       </section>
     </div>
 

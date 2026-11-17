@@ -452,6 +452,27 @@ h2 em {
   gap: 13px;
   margin-top: 13px;
 }
+/* Icônes en jaune doré */
+.hero-stat-bar .stat strong svg {
+  color: #f0c46c;
+  stroke: #f0c46c;
+}
+
+.skills-footer svg {
+  width: 14px;
+  height: 14px;
+  color: #f0c46c;
+  fill: #f0c46c;
+  stroke: #f0c46c;
+  stroke-width: 1.8;
+  flex-shrink: 0;
+}
+
+/* Titres et petits textes en gris clair */
+.hero-stat-bar .stat strong,
+.hero-stat-bar .stat span {
+  color: #c5c0b5;
+}
 .about,
 .skills {
   min-height: 376px;
@@ -560,7 +581,7 @@ h2 em {
 }
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 11px;
   flex: 1;
 }
@@ -584,32 +605,45 @@ h2 em {
   border-color: var(--gold);
   transform: translateY(-3px);
 }
+
+/* =========================================
+   SKILLS — TECHNOLOGY LOGOS
+========================================= */
+
 .skill-symbol {
-  font-family: "Manrope", sans-serif;
-  font-size: 25px;
-  font-weight: 900;
-  letter-spacing: -0.055em;
-  color: #f7c664;
-  text-shadow: 0 0 22px #dca94b22;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
-.skill-card:nth-child(2) .skill-symbol,
-.skill-card:nth-child(7) .skill-symbol,
-.skill-card:nth-child(9) .skill-symbol {
-  color: #7fbaec;
+
+.skill-symbol img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
 }
-.skill-card:nth-child(4) .skill-symbol,
-.skill-card:nth-child(6) .skill-symbol {
-  color: #8ce2ae;
+
+.skill-card:hover .skill-symbol img {
+  transform: scale(1.1);
 }
-.skill-card.skill-ai .skill-symbol {
-  color: #e7a8ff;
-}
+
 .skill-name {
   color: #c9c8c2;
   font-size: 11px;
 }
 .skills-footer {
   align-self: center;
+  width: max-content;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  gap: 7px;
+
   color: #e4c184;
   padding: 10px 15px;
   border-radius: 8px;
@@ -617,6 +651,15 @@ h2 em {
   border: 1px solid rgba(237, 187, 94, 0.18);
   font-size: 11px;
   background: #201e18;
+}
+.skills-footer {
+  color: #c5c0b5; /* Texte gris clair */
+}
+
+.skills-footer svg {
+  color: #f0c46c; /* Cœur jaune */
+  fill: #f0c46c;
+  stroke: #f0c46c;
 }
 .services,
 .projects,

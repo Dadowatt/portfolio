@@ -70,20 +70,25 @@ export const projects: PortfolioProject[] = [
   }
 ];
 
+
 export const skills = [
-  { short: 'A', name: 'Angular', type: 'frontend' },
-  { short: 'TS', name: 'TypeScript', type: 'frontend' },
-  { short: 'Py', name: 'Python', type: 'backend' },
-  { short: 'Dj', name: 'Django', type: 'backend' },
-  { short: 'API', name: 'FastAPI', type: 'backend' },
-  { short: 'CSS', name: 'Tailwind CSS', type: 'frontend' },
-  { short: 'SQL', name: 'MySQL', type: 'backend' },
-  { short: 'Git', name: 'Git / GitHub', type: 'tools' },
-  { short: 'D', name: 'Docker', type: 'tools' },
-  { short: 'Fg', name: 'Figma', type: 'tools' },
-  { short: 'RAG', name: 'RAG / LLM', type: 'ai' },
-  { short: 'AI', name: 'IA', type: 'ai' }
+  { short: 'A', name: 'Angular', type: 'frontend', image: '/images/skills/angular.png' },
+  { short: 'TS', name: 'TypeScript', type: 'frontend', image: '/images/skills/typescript.png' },
+  { short: 'Py', name: 'Python', type: 'backend', image: '/images/skills/python.png' },
+  { short: 'Dj', name: 'Django', type: 'backend', image: '/images/skills/django.png' },
+  { short: 'API', name: 'FastAPI', type: 'backend', image: '/images/skills/fastapi.png' },
+  { short: 'CSS', name: 'Tailwind CSS', type: 'frontend', image: '/images/skills/tailwind.png' },
+  { short: 'SQL', name: 'SQL', type: 'backend', image: '/images/skills/sql.png' },
+  { short: 'Git', name: 'Git / GitHub', type: 'tools', image: '/images/skills/git.png' },
+  { short: 'D', name: 'Docker', type: 'tools', image: '/images/skills/docker.png' },
+  { short: 'Fg', name: 'Figma', type: 'tools', image: '/images/skills/figma.png' },
+  { short: 'L', name: 'Laravel', type: 'backend', image: '/images/skills/laravel.png' },
+  { short: 'N', name: 'Node.js', type: 'backend', image: '/images/skills/nodejs.png' },
+  { short: 'JS', name: 'JavaScript', type: 'frontend', image: '/images/skills/javascript.png' },
+  { short: 'HTML', name: 'HTML', type: 'frontend', image: '/images/skills/html.png' },
+  { short: 'CSS', name: 'CSS', type: 'frontend', image: '/images/skills/css.png' }
 ];
+
 
 export const services = [
   { icon: 'web', title: 'Développement web', description: 'Interfaces modernes, responsives et adaptées aux besoins des utilisateurs.' },

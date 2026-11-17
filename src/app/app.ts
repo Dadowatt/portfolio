@@ -10,7 +10,8 @@ import {
   LucideServer,
   LucideWorkflow,
   LucideMail,
-  LucideArrowUpRight
+  LucideArrowUpRight,
+  LucideHeart
 } from '@lucide/angular';
 
 import { profile, projects, services, skills, timeline } from './portfolio-data';
@@ -28,7 +29,8 @@ import { profile, projects, services, skills, timeline } from './portfolio-data'
   LucideServer,
   LucideWorkflow,
   LucideMail,
-  LucideArrowUpRight
+  LucideArrowUpRight,
+  LucideHeart
 ],
   templateUrl: './app.html',
   styleUrl: './app.css'
