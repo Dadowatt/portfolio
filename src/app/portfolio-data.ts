@@ -1,3 +1,4 @@
+
 export const profile = {
   name: 'Dado Watt',
   firstName: 'Dado',
@@ -23,53 +24,114 @@ export interface PortfolioProject {
   description: string;
   technologies: string[];
   github: string;
+  githubLabel?: string;
   extraGithub?: { label: string; url: string }[];
+  demo?: string;
+  demoLabel?: string;
   previewLabel: string;
   previewCategory: string;
 }
 
 export const projects: PortfolioProject[] = [
   {
-    slug: 'admiguide', name: 'AdmiGuide', category: 'Projet de fin de formation · IA',
+    slug: 'admiguide',
+    name: 'AdmiGuide',
+    category: 'Projet de fin de formation · IA',
     description: 'Assistant intelligent qui déduit la démarche administrative adaptée à une situation décrite avec les mots de l\'utilisateur.',
     technologies: ['Angular', 'Django', 'FastAPI', 'RAG'],
     github: 'https://github.com/AdmiGuide/admiguide-frontend',
+    githubLabel: 'Frontend',
     extraGithub: [
-      { label: 'Backend', url: 'https://github.com/AdmiGuide/admiguide-backend' },
-      { label: 'Service IA', url: 'https://github.com/AdmiGuide/admiguide-ai' }
+      {
+        label: 'Backend',
+        url: 'https://github.com/AdmiGuide/admiguide-backend'
+      },
+      {
+        label: 'Service IA',
+        url: 'https://github.com/AdmiGuide/admiguide-ai'
+      }
     ],
-    previewLabel: 'AdmiGuide', previewCategory: 'Orientation administrative'
+    demo: 'https://drive.google.com/file/d/1ngGhHlRODHPNHfGPMGMzn9VSTogcbUAR/view',
+    demoLabel: 'Voir la démo',
+    previewLabel: 'AdmiGuide',
+    previewCategory: 'Orientation administrative'
   },
   {
-    slug: 'ecostock', name: 'Eco-Stock', category: 'Application web · Gestion',
+    slug: 'ecostock',
+    name: 'Eco-Stock',
+    category: 'Application web · Gestion',
     description: 'Application de gestion des stocks alimentaires : produits, entrepôts, transferts et tableau de bord.',
     technologies: ['Angular', 'Django REST', 'JWT', 'Chart.js'],
     github: 'https://github.com/Dadowatt/eco-stock-front',
-    previewLabel: 'Eco-Stock', previewCategory: 'Gestion de stocks'
+    githubLabel: 'Frontend',
+    extraGithub: [
+      {
+        label: 'Backend',
+        url: 'https://github.com/Dadowatt/eco-stock-api-backend'
+      }
+    ],
+    demo: 'https://drive.google.com/file/d/1BFEnRpyjj1GadxFvP5D4WUjEQvDBPxMp/view',
+    demoLabel: 'Voir la démo',
+    previewLabel: 'Eco-Stock',
+    previewCategory: 'Gestion de stocks'
   },
   {
-    slug: 'smarthelp', name: 'SmartHelp', category: 'Application web · IA',
+    slug: 'smarthelp',
+    name: 'SmartHelp',
+    category: 'Application web · IA',
     description: 'Interface de support client permettant d\'analyser des réclamations par texte, image et voix.',
     technologies: ['Angular', 'FastAPI', 'IA multimodale'],
     github: 'https://github.com/Dadowatt/smarthelp-front',
-    previewLabel: 'SmartHelp', previewCategory: 'Support intelligent'
+    githubLabel: 'Frontend',
+    extraGithub: [
+      {
+        label: 'Backend & IA',
+        url: 'https://github.com/Dadowatt/smarthelp-support-api'
+      }
+    ],
+    demo: 'https://drive.google.com/file/d/10CGb4hEu5BzzsSXh1Ud4T-K0D0STuZnl/view',
+    demoLabel: 'Voir la démo',
+    previewLabel: 'SmartHelp',
+    previewCategory: 'Support intelligent'
   },
   {
-    slug: 'rag', name: 'Assistant RAG', category: 'Backend · Intelligence artificielle',
+    slug: 'rag',
+    name: 'Assistant RAG',
+    category: 'Backend · Intelligence artificielle',
     description: 'Assistant documentaire qui recherche les passages pertinents d\'un PDF pour répondre aux questions.',
     technologies: ['Django', 'LangChain', 'ChromaDB'],
     github: 'https://github.com/Dadowatt/assistant_RAG_Langchain',
-    previewLabel: 'Assistant RAG', previewCategory: 'Questions sur documents'
+    githubLabel: 'Code source',
+    previewLabel: 'Assistant RAG',
+    previewCategory: 'Questions sur documents'
   },
   {
-    slug: 'starbuffet', name: 'Star Buffet', category: 'Application web · Django',
-    description: 'Annuaire de traiteurs avec authentification et gestion des prestataires.',
-    technologies: ['Python', 'Django', 'HTML', 'CSS'],
-    github: 'https://github.com/Dadowatt/starbuffet_project',
-    previewLabel: 'Star Buffet', previewCategory: 'Plateforme de traiteurs'
+    slug: 'sunuidees',
+    name: 'Sunu-Idées',
+    category: 'Application web · IA',
+    description: 'Plateforme de partage anonyme d\'idées avec classification automatique par IA et gestion interactive des publications.',
+    technologies: ['JavaScript', 'Vite', 'Supabase', 'OpenRouter'],
+    github: 'https://github.com/Dadowatt/sunu-idee_refactoring_vite',
+    githubLabel: 'Code V2 · IA',
+    demo: 'https://sunuidees.netlify.app/',
+    demoLabel: 'Voir la démo (V1 sans IA)',
+    previewLabel: 'Sunu-Idées',
+    previewCategory: 'Partage d\'idées'
+  },
+  {
+    slug: 'sta',
+    name: 'STA — Traçabilité d\'Activité',
+    category: 'Application web · Gestion',
+    description: 'Application web permettant de centraliser et suivre les activités d\'une équipe de développement avec recherche, filtrage et gestion des accès.',
+    technologies: ['Python', 'Django', 'MySQL', 'Bootstrap 5'],
+    github: 'https://github.com/Dadowatt/STA_system',
+    githubLabel: 'Code source',
+    demo: 'https://drive.google.com/file/d/1jMohN4irMmKfoHdXh4gqkJiSd796pUqV/view',
+    demoLabel: 'Voir la démo',
+    previewLabel: 'STA System',
+    previewCategory: 'Suivi des activités'
   }
 ];
-
 
 export const skills = [
   { short: 'A', name: 'Angular', type: 'frontend', image: '/images/skills/angular.png' },
@@ -88,7 +150,6 @@ export const skills = [
   { short: 'HTML', name: 'HTML', type: 'frontend', image: '/images/skills/html.png' },
   { short: 'CSS', name: 'CSS', type: 'frontend', image: '/images/skills/css.png' }
 ];
-
 
 export const services = [
   { icon: 'web', title: 'Développement web', description: 'Interfaces modernes, responsives et adaptées aux besoins des utilisateurs.' },

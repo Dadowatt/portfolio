@@ -305,10 +305,10 @@
         <article class="project-card">
           <a
             class="project-main-link"
-            [href]="project.github"
+            [href]="project.demo || project.github"
             target="_blank"
             rel="noopener noreferrer"
-            [attr.aria-label]="'Ouvrir le dépôt GitHub de ' + project.name"
+            [attr.aria-label]="(project.demo ? 'Voir la démonstration de ' : 'Ouvrir le dépôt GitHub de ') + project.name"
           >
             <div
               class="project-preview"
@@ -329,7 +329,7 @@
                 </div>
               </div>
               <div class="preview-overlay">
-                <span>Voir sur GitHub</span><span aria-hidden="true">↗</span>
+                <span>{{ project.demo ? 'Voir la démo' : 'Voir sur GitHub' }}</span><span aria-hidden="true">↗</span>
               </div>
             </div>
             <div class="project-body">
@@ -345,23 +345,34 @@
               </div>
             </div>
           </a>
-          @if (project.extraGithub?.length) {
           <div class="project-extra">
-            <span>Autres dépôts :</span>
-            @for (extra of project.extraGithub; track extra.url) {
+            @if (project.demo) {
+            <a
+              class="project-demo-link"
+              [href]="project.demo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ▶ {{ project.demoLabel || 'Voir la démo' }}
+            </a>
+            }
+            <a
+              [href]="project.github"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ project.githubLabel || 'Code source' }} ↗
+            </a>
+            @for (extra of project.extraGithub || []; track extra.url) {
             <a [href]="extra.url" target="_blank" rel="noopener noreferrer"
               >{{ extra.label }} ↗</a
             >
             }
           </div>
-          }
         </article>
         }
       </div>
-      <p class="preview-disclaimer">
-        Les visuels des cartes sont provisoires : ils seront remplacés par de
-        vraies captures d'écran des projets.
-      </p>
+
     </section>
 
     <section
@@ -442,13 +453,16 @@
             required
           ></textarea>
         </label>
-        <button type="submit" class="btn btn-gold">
-          Préparer le message <span aria-hidden="true">↗</span>
+        
+        <button
+          type="submit"
+          class="btn btn-gold"
+          [disabled]="isSending"
+        >
+          {{ isSending ? 'Envoi en cours...' : 'Envoyer le message' }}
+          <span aria-hidden="true">↗</span>
         </button>
-        <p class="form-footnote">
-          Le formulaire ouvre votre application de messagerie. Aucun message
-          n'est transmis par le site.
-        </p>
+
         @if (contactNotice) {
         <p class="form-notice" role="status">{{ contactNotice }}</p>
         }
