@@ -26,10 +26,6 @@
   background: rgba(11, 12, 13, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  z-index: 30;
-}
-html {
-  scroll-padding-top: 95px;
 }
 .brand {
   display: inline-flex;
@@ -302,8 +298,8 @@ h2 em {
   font-weight: 700;
 }
 .social-row a {
-  height: 33px;
-  min-width: 33px;
+  height: 42px;
+  min-width: 42px;
   display: grid;
   place-items: center;
   border: 1px solid #3b392f;
@@ -312,8 +308,8 @@ h2 em {
   font-weight: 800;
 }
 .social-row a svg {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
 }
 .social-row a:hover {
   color: var(--gold);
@@ -409,42 +405,62 @@ h2 em {
   background: transparent;
   filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.36));
 }
+/* Domaines de compétences : styles regroupés (desktop et mobile) */
 .hero-stat-bar {
   position: absolute;
   z-index: 4;
-  bottom: 26px;
+  bottom: 48px;
   left: 5%;
   right: 5%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background: rgba(26, 27, 24, 0.93);
-  backdrop-filter: blur(18px);
-  border: 1px solid #65533a;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  background: rgba(31, 31, 24, 0.88);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(210, 176, 103, 0.24);
+  border-radius: 13px;
   box-shadow:
-    0 8px 35px #000a,
-    inset 0 1px #ffffff24;
-  border-radius: 12px;
+    0 5px 18px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
   padding: 20px 8px;
+  transition: border-color 0.3s ease;
+}
+.hero-stat-bar:hover {
+  border-color: rgba(237, 187, 94, 0.4);
 }
 .stat {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  gap: 6px;
-  padding: 0 5px;
+  gap: 10px;
+  padding: 0 8px;
 }
 .stat + .stat {
-  border-left: 1px solid #40382b;
+  border-left: 1px solid rgba(210, 176, 103, 0.16);
 }
 .stat strong {
-  font-size: 20px;
-  color: #f8efd7;
-  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 13px;
+  color: #f0c46c;
+  font-weight: 700;
   letter-spacing: -0.02em;
 }
+.stat strong svg {
+  width: 19px;
+  height: 19px;
+  color: #d6b66e;
+  stroke-width: 1.8;
+  flex-shrink: 0;
+}
 .stat span {
-  color: #b4ae9f;
-  font-size: 10px;
+  color: #c5c0b5;
+  font-size: 11px;
+  line-height: 1.6;
 }
 .two-column {
   display: grid;
@@ -566,14 +582,6 @@ h2 em {
   padding: 11px 16px;
   min-height: 36px;
 }
-.pending-note {
-  display: inline-flex;
-  padding: 10px 12px;
-  border: 1px solid rgba(237, 187, 94, 0.18);
-  border-radius: 7px;
-  color: #aea490;
-  font-size: 12px;
-}
 .skills {
   padding: 24px;
   display: flex;
@@ -644,22 +652,13 @@ h2 em {
   white-space: nowrap;
   gap: 7px;
 
-  color: #e4c184;
+  color: #c5c0b5;
   padding: 10px 15px;
   border-radius: 8px;
   margin-top: 17px;
   border: 1px solid rgba(237, 187, 94, 0.18);
   font-size: 11px;
   background: #201e18;
-}
-.skills-footer {
-  color: #c5c0b5; /* Texte gris clair */
-}
-
-.skills-footer svg {
-  color: #f0c46c; /* Cœur jaune */
-  fill: #f0c46c;
-  stroke: #f0c46c;
 }
 .services,
 .projects,
@@ -1165,6 +1164,53 @@ h2 em {
   white-space: nowrap;
   border: 0;
 }
+.cv-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  background: rgba(245, 189, 85, 0.07);
+  border: 1px solid rgba(245, 189, 85, 0.28);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  transition: all 0.3s ease;
+}
+
+.cv-download:hover {
+  background: rgba(245, 189, 85, 0.14);
+  border-color: rgba(245, 189, 85, 0.55);
+  box-shadow: 0 0 15px rgba(245, 189, 85, 0.12);
+  transform: translateY(-2px);
+}
+
+.cv-download-icon {
+  width: 15px;
+  height: 15px;
+  stroke-width: 1.8;
+  transition: transform 0.3s ease;
+  color: var(--gold);
+}
+
+.cv-download:hover .cv-download-icon {
+  transform: translateY(2px);
+}
+
+.hero-actions .btn svg {
+  width: 17px;
+  height: 17px;
+  stroke-width: 1.8;
+  flex-shrink: 0;
+}
+.hero-actions .btn-outline svg {
+  color: #f0c46c;
+  stroke: #f0c46c;
+}
+
 @media (max-width: 1240px) {
   .site-shell {
     padding: 0 22px;
@@ -1298,10 +1344,10 @@ h2 em {
     padding: 12px 4px;
   }
   .stat strong {
-    font-size: 14px;
+    font-size: 12px;
   }
   .stat span {
-    font-size: 9px;
+    font-size: 10px;
   }
   .social-row {
     margin-top: 21px;
@@ -1414,181 +1460,4 @@ h2 em {
   .service-card:hover {
     transform: none;
   }
-}
-
-.cv-download {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-
-  background: rgba(245, 189, 85, 0.07);
-  border: 1px solid rgba(245, 189, 85, 0.28);
-/*  color: var(--gold); */
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
-
-  transition: all 0.3s ease;
-}
-
-.cv-download:hover {
-  background: rgba(245, 189, 85, 0.14);
-  border-color: rgba(245, 189, 85, 0.55);
-  box-shadow: 0 0 15px rgba(245, 189, 85, 0.12);
-  transform: translateY(-2px);
-}
-
-.cv-download-icon {
-  width: 15px;
-  height: 15px;
-  stroke-width: 1.8;
-  transition: transform 0.3s ease;
-  color: var(--gold);
-}
-
-.cv-download:hover .cv-download-icon {
-  transform: translateY(2px);
-}
-
-
-/* =========================================
-   HERO STATS — DARK GOLD GLASSMORPHISM
-========================================= */
-
-.hero-stat-bar {
-  position: absolute;
-  z-index: 4;
-
-  /* Positionnement */
-  bottom: 48px;
-  left: 5%;
-  right: 5%;
-
-  /* Dimensions initiales conservées */
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  /* Fond sombre olive / doré */
-  background: rgba(31, 31, 24, 0.88);
-
-  /* Aucun effet de flou */
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-
-  /* Bordure et profondeur */
-  border: 1px solid rgba(210, 176, 103, 0.24);
-  border-radius: 13px;
-
-  box-shadow:
-    0 5px 18px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
-
-  padding: 20px 8px;
-
-  transition: border-color 0.3s ease;
-}
-
-.hero-stat-bar:hover {
-  border-color: rgba(237, 187, 94, 0.4);
-}
-
-/* Statistiques individuelles */
-.stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 7px;
-  padding: 0 5px;
-}
-
-/* Séparation des statistiques */
-.stat + .stat {
-  border-left: 1px solid rgba(210, 176, 103, 0.16);
-}
-
-/* Valeurs */
-.stat strong {
-  font-size: 19px;
-  color: #f0c46c;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-/* Libellés */
-.stat span {
-  color: #c5c0b5;
-  font-size: 10px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-stat-bar {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    right: auto;
-    width: 90%;
-    margin: 20px auto 0;
-  }
-}
-
-
-
-
-/* =========================================
-   HERO STATS — DOMAINES DE COMPETENCES
-========================================= */
-
-.stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 0 8px;
-  text-align: center;
-}
-
-.stat strong {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-
-  font-size: 13px;
-  color: #f0c46c;
-  font-weight: 700;
-}
-
-.stat strong svg {
-  width: 19px;
-  height: 19px;
-  color: #d6b66e;
-  stroke-width: 1.8;
-  flex-shrink: 0;
-}
-
-.stat span {
-  color: #c5c0b5;
-  font-size: 11px;
-  line-height: 1.6;
-}
-
-.hero-actions .btn svg {
-  width: 17px;
-  height: 17px;
-  stroke-width: 1.8;
-  flex-shrink: 0;
-}
-.hero-actions .btn-outline svg {
-  color: #f0c46c;
-  stroke: #f0c46c;
-  width: 17px;
-  height: 17px;
-  stroke-width: 1.8;
 }
