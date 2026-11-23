@@ -63,11 +63,16 @@ export class App {
 
   contactNotice = '';
   isSending = false;
+  activeSection = 'home';
 
   // Remplacer TON_IDENTIFIANT par l'identifiant Formspree.
   private readonly formspreeEndpoint =
     'https://formspree.io/f/xrpqooew';
 
+  setActiveSection(section: string): void {
+    this.activeSection = section;
+  }
+  
   closeMenu(): void {
     this.menuOpen = false;
   }

@@ -1,4 +1,11 @@
 <div class="site-shell" id="home">
+  <!-- Logo GitHub réutilisable pour les liens -->
+  <svg class="svg-symbols" aria-hidden="true" width="0" height="0">
+    <symbol id="github-logo" viewBox="0 0 24 24">
+      <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.12c-3.09.67-3.74-1.31-3.74-1.31-.5-1.29-1.23-1.63-1.23-1.63-1.01-.68.08-.66.08-.66 1.11.08 1.7 1.14 1.7 1.14.98 1.69 2.57 1.2 3.2.92.1-.71.39-1.2.7-1.48-2.47-.28-5.06-1.23-5.06-5.49 0-1.21.43-2.2 1.14-2.97-.11-.28-.5-1.41.11-2.93 0 0 .93-.3 3.05 1.13a10.5 10.5 0 0 1 5.55 0c2.11-1.43 3.04-1.13 3.04-1.13.61 1.52.23 2.65.11 2.93.71.77 1.13 1.76 1.13 2.97 0 4.27-2.59 5.21-5.07 5.49.4.34.75 1.01.75 2.04v3.03c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z" />
+    </symbol>
+  </svg>
+
   <header class="topbar" aria-label="Navigation principale">
     <a
       class="brand"
@@ -11,12 +18,53 @@
     </a>
 
     <nav class="nav-desktop" aria-label="Sections du portfolio">
-      <a class="nav-link active" href="#home">Accueil</a>
-      <a class="nav-link" href="#about">À propos</a>
-      <a class="nav-link" href="#skills">Compétences</a>
-      <a class="nav-link" href="#services">Services</a>
-      <a class="nav-link" href="#projects">Projets</a>
-      <a class="nav-link" href="#experience">Parcours</a>
+      <a
+        class="nav-link"
+        href="#home"
+        [class.active]="activeSection === 'home'"
+        (click)="setActiveSection('home')"
+        >Accueil</a
+      >
+
+      <a
+        class="nav-link"
+        href="#about"
+        [class.active]="activeSection === 'about'"
+        (click)="setActiveSection('about')"
+        >À propos</a
+      >
+
+      <a
+        class="nav-link"
+        href="#skills"
+        [class.active]="activeSection === 'skills'"
+        (click)="setActiveSection('skills')"
+        >Compétences</a
+      >
+
+      <a
+        class="nav-link"
+        href="#services"
+        [class.active]="activeSection === 'services'"
+        (click)="setActiveSection('services')"
+        >Services</a
+      >
+
+      <a
+        class="nav-link"
+        href="#projects"
+        [class.active]="activeSection === 'projects'"
+        (click)="setActiveSection('projects')"
+        >Projets</a
+      >
+
+      <a
+        class="nav-link"
+        href="#experience"
+        [class.active]="activeSection === 'experience'"
+        (click)="setActiveSection('experience')"
+        >Parcours</a
+      >
     </nav>
 
     <a class="top-contact" href="#contact"
@@ -117,39 +165,34 @@
           loading="eager"
         />
 
+        <div class="hero-stat-bar" aria-label="Mes domaines de compétences">
+          <!-- FRONTEND -->
+          <div class="stat">
+            <strong>
+              <svg lucidePanelsTopLeft aria-hidden="true"></svg>
+              Frontend
+            </strong>
+            <span>Angular · Tailwind · HTML/CSS</span>
+          </div>
 
-<div class="hero-stat-bar" aria-label="Mes domaines de compétences">
+          <!-- BACKEND -->
+          <div class="stat">
+            <strong>
+              <svg lucideServer aria-hidden="true"></svg>
+              Backend
+            </strong>
+            <span>Django · Laravel · API</span>
+          </div>
 
-  <!-- FRONTEND -->
-  <div class="stat">
-    <strong>
-      <svg lucidePanelsTopLeft aria-hidden="true"></svg>
-      Frontend
-    </strong>
-    <span>Angular · Tailwind · HTML/CSS</span>
-  </div>
-
-  <!-- BACKEND -->
-  <div class="stat">
-    <strong>
-      <svg lucideServer aria-hidden="true"></svg>
-      Backend
-    </strong>
-    <span>Django · Laravel · API</span>
-  </div>
-
-  <!-- INTELLIGENCE ARTIFICIELLE -->
-  <div class="stat">
-    <strong>
-      <svg lucideBrainCircuit aria-hidden="true"></svg>
-      Intelligence Artificielle
-    </strong>
-    <span>IA · RAG · LLM</span>
-  </div>
-
-</div>
-
-
+          <!-- INTELLIGENCE ARTIFICIELLE -->
+          <div class="stat">
+            <strong>
+              <svg lucideBrainCircuit aria-hidden="true"></svg>
+              Intelligence Artificielle
+            </strong>
+            <span>IA · RAG · LLM</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -218,20 +261,16 @@
           @for (skill of skills; track skill.name) {
           <div class="skill-card" [class.skill-ai]="skill.type === 'ai'">
             <div class="skill-symbol">
-            <img
-              [src]="skill.image"
-              [alt]="skill.name"
-              loading="lazy"
-            />
-          </div>
+              <img [src]="skill.image" [alt]="skill.name" loading="lazy" />
+            </div>
             <span class="skill-name">{{ skill.name }}</span>
           </div>
           }
         </div>
         <div class="skills-footer">
-        <svg lucideHeart aria-hidden="true"></svg>
-        <span>Toujours curieuse d'apprendre et d'évoluer</span>
-      </div>
+          <svg lucideHeart aria-hidden="true"></svg>
+          <span>Toujours curieuse d'apprendre et d'évoluer</span>
+        </div>
       </section>
     </div>
 
@@ -297,8 +336,7 @@
           [href]="profile.github + '?tab=repositories'"
           target="_blank"
           rel="noopener noreferrer"
-          >Tous mes dépôts GitHub <span aria-hidden="true">↗</span></a
-        >
+        >Tous mes dépôts GitHub <span aria-hidden="true">↗</span></a>
       </div>
       <div class="projects-grid">
         @for (project of projects; track project.slug) {
@@ -329,7 +367,10 @@
                 </div>
               </div>
               <div class="preview-overlay">
-                <span>{{ project.demo ? 'Voir la démo' : 'Voir sur GitHub' }}</span><span aria-hidden="true">↗</span>
+                <span
+                  >{{ project.demo ? 'Voir la démo' : 'Voir sur GitHub' }}</span
+                >
+                <span aria-hidden="true">↗</span>
               </div>
             </div>
             <div class="project-body">
@@ -353,7 +394,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              ▶ {{ project.demoLabel || 'Voir la démo' }}
+              {{ project.demoLabel || 'Voir la démo' }}
             </a>
             }
             <a
@@ -364,15 +405,12 @@
               {{ project.githubLabel || 'Code source' }} ↗
             </a>
             @for (extra of project.extraGithub || []; track extra.url) {
-            <a [href]="extra.url" target="_blank" rel="noopener noreferrer"
-              >{{ extra.label }} ↗</a
-            >
+            <a [href]="extra.url" target="_blank" rel="noopener noreferrer">{{ extra.label }} ↗</a>
             }
           </div>
         </article>
         }
       </div>
-
     </section>
 
     <section
@@ -412,8 +450,13 @@
           target="_blank"
           rel="noopener noreferrer"
           class="text-link contact-github"
-          >Retrouvez mes projets sur GitHub ↗</a
         >
+          <svg class="github-icon" aria-hidden="true">
+            <use href="#github-logo"></use>
+          </svg>
+          Retrouvez mes projets sur GitHub
+          <svg lucideArrowUpRight class="external-link-icon" aria-hidden="true"></svg>
+        </a>
       </div>
       <form class="contact-form" (ngSubmit)="sendMessage()">
         <div class="form-two">
@@ -453,12 +496,8 @@
             required
           ></textarea>
         </label>
-        
-        <button
-          type="submit"
-          class="btn btn-gold"
-          [disabled]="isSending"
-        >
+
+        <button type="submit" class="btn btn-gold" [disabled]="isSending">
           {{ isSending ? 'Envoi en cours...' : 'Envoyer le message' }}
           <span aria-hidden="true">↗</span>
         </button>
@@ -473,22 +512,38 @@
           <div><b>Localisation</b><span>{{ profile.location }}</span></div>
         </div>
         <div class="contact-item">
-          <span class="contact-item-icon">✉</span>
+          
+        <span class="contact-item-icon">
+          <svg lucideMail aria-hidden="true"></svg>
+        </span>
+
           <div>
             <b>E-mail</b
             ><span>{{ profile.email || 'Adresse à renseigner' }}</span>
           </div>
         </div>
         <div class="contact-item">
-          <span class="contact-item-icon">⌘</span>
+          
+        <span class="contact-item-icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.12c-3.09.67-3.74-1.31-3.74-1.31-.5-1.29-1.23-1.63-1.23-1.63-1.01-.68.08-.66.08-.66 1.11.08 1.7 1.14 1.7 1.14.98 1.69 2.57 1.2 3.2.92.1-.71.39-1.2.7-1.48-2.47-.28-5.06-1.23-5.06-5.49 0-1.21.43-2.2 1.14-2.97-.11-.28-.5-1.41.11-2.93 0 0 .93-.3 3.05 1.13a10.5 10.5 0 0 1 5.55 0c2.11-1.43 3.04-1.13 3.04-1.13.61 1.52.23 2.65.11 2.93.71.77 1.13 1.76 1.13 2.97 0 4.27-2.59 5.21-5.07 5.49.4.34.75 1.01.75 2.04v3.03c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/>
+          </svg>
+        </span>
+
           <div>
             <b>GitHub</b
             ><a
               [href]="profile.github"
               target="_blank"
               rel="noopener noreferrer"
-              >github.com/Dadowatt ↗</a
             >
+              github.com/Dadowatt
+              <svg lucideArrowUpRight class="external-link-icon" aria-hidden="true"></svg>
+            </a>
           </div>
         </div>
       </aside>
