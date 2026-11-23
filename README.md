@@ -60,3 +60,108 @@ Chaque carte ouvre directement le dépôt Github du projet dans un nouvel onglet
 ```powershell
 npm run build
 ```
+
+# Portfolio — Dado Watt
+
+Portfolio personnel de **Dado Watt**, développeuse web, web mobile et IA, formée à Simplon Sénégal.
+
+Ce site présente mon parcours, mes compétences techniques et les projets que j'ai réalisés en développement web et en intégration de l'intelligence artificielle.
+
+## Technologies utilisées
+
+- **Frontend :** Angular 22, TypeScript, HTML et CSS
+- **Style :** Tailwind CSS 4
+- **Icônes :** Lucide Angular
+- **Formulaire de contact :** Formspree
+- **Hébergement :** Netlify
+
+## Fonctionnalités
+
+- Interface responsive adaptée aux ordinateurs et aux mobiles
+- Présentation de mon profil et de mes compétences
+- Présentation des services proposés
+- Galerie de projets avec liens GitHub et démonstrations
+- Accès aux dépôts Frontend, Backend et IA selon les projets
+- Téléchargement de mon CV
+- Formulaire de contact fonctionnel avec Formspree
+- Liens vers mes profils professionnels
+
+## Projets présentés
+
+| Projet | Description |
+| --- | --- |
+| **AdmiGuide** | Assistant intelligent d'orientation administrative |
+| **Eco-Stock** | Application de gestion des stocks alimentaires |
+| **SmartHelp** | Application d'analyse intelligente des réclamations |
+| **Assistant RAG** | Assistant de questions-réponses sur documents |
+| **Sunu-Idées** | Plateforme de partage d'idées avec une version intégrant l'IA |
+| **STA System** | Application de suivi et de traçabilité des activités |
+
+Chaque projet dispose d'un lien vers son code source. Des démonstrations sont également disponibles pour plusieurs projets.
+
+## Installation en local
+
+### Prérequis
+
+- Node.js compatible avec Angular 22
+- npm
+- Git
+
+### 1. Cloner le dépôt
+
+```bash
+git clone https://github.com/Dadowatt/portfolio.git
+cd portfolio
+```
+
+### 2. Installer les dépendances
+
+```bash
+npm install
+```
+
+### 3. Démarrer l'application
+
+```bash
+npm start
+```
+
+L'application est accessible sur :
+
+http://localhost:4200
+
+### 4. Compiler pour la production
+
+```bash
+npm run build
+```
+
+## Organisation du projet
+
+```text
+src/
+└── app/
+    ├── app.ts              # Logique du composant principal
+    ├── app.html            # Interface du portfolio
+    ├── app.css             # Styles personnalisés
+    └── portfolio-data.ts   # Profil, projets et compétences
+
+public/
+├── images/                 # Photos et logos
+└── documents/              # CV
+```
+
+## Déploiement
+
+Le portfolio est déployé sur **Netlify**.
+
+Le formulaire de contact utilise **Formspree** pour transmettre directement les messages, sans nécessiter de backend dédié.
+
+## Développé par
+
+**Dado Watt**  
+Développeuse Web, Web Mobile et IA
+
+- **GitHub :** https://github.com/Dadowatt
+- **LinkedIn :** https://www.linkedin.com/in/dado-watt-417971152/
+- **E-mail :** dadowatt92@gmail.com
