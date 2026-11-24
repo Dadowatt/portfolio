@@ -23,6 +23,7 @@ export interface PortfolioProject {
   category: string;
   description: string;
   technologies: string[];
+  image?: string;
   github: string;
   githubLabel?: string;
   extraGithub?: { label: string; url: string }[];
@@ -36,6 +37,7 @@ export const projects: PortfolioProject[] = [
   {
     slug: 'admiguide',
     name: 'AdmiGuide',
+    image: '/images/projects/admiguide.png',
     category: 'Projet de fin de formation · IA',
     description: 'Assistant intelligent qui déduit la démarche administrative adaptée à une situation décrite avec les mots de l\'utilisateur.',
     technologies: ['Angular', 'Django', 'FastAPI', 'RAG'],

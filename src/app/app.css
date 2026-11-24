@@ -1452,7 +1452,11 @@ h2 em {
     margin: 20px auto 0;
   }
 }
-
+.contact-form .btn-gold svg {
+  width: 16px;
+  height: 16px;
+  color: #17120c;
+}
 
 /* Icônes SVG réutilisables */
 .svg-symbols {
@@ -1486,6 +1490,7 @@ h2 em {
 .external-icon svg {
   width: 17px;
   height: 17px;
+  color: var(--gold);
 }
 /* Alignement des icônes avec le texte */
 .project-extra a,
@@ -1496,3 +1501,37 @@ h2 em {
   align-items: center;
   gap: 6px;
 }
+.top-contact svg,
+.btn svg {
+  width: 16px;
+  height: 16px;
+  color: var(--gold);
+}
+
+
+/* Conserver l'en-tête et afficher l'image en dessous */
+.project-preview:has(.project-preview-image) {
+  height: auto;
+  background: transparent;
+}
+
+/* Image réelle du projet */
+.project-preview-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+
+/* En-tête conservé pour tous les projets */
+.fake-browser {
+  position: relative;
+  z-index: 1;
+}
+
+/* Icône Lucide pour les projets sans image */
+.preview-overlay svg {
+  width: 15px;
+  height: 15px;
+}
+

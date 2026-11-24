@@ -12,7 +12,8 @@ import {
   LucideWorkflow,
   LucideMail,
   LucideArrowUpRight,
-  LucideHeart
+  LucideHeart,
+  LucideMapPin
 } from '@lucide/angular';
 
 import {
@@ -37,7 +38,8 @@ import {
     LucideWorkflow,
     LucideMail,
     LucideArrowUpRight,
-    LucideHeart
+    LucideHeart,
+    LucideMapPin
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
@@ -65,7 +67,6 @@ export class App {
   isSending = false;
   activeSection = 'home';
 
-  // Remplacer TON_IDENTIFIANT par l'identifiant Formspree.
   private readonly formspreeEndpoint =
     'https://formspree.io/f/xrpqooew';
 
